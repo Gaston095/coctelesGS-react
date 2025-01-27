@@ -12,7 +12,7 @@ export default function useFetch(url) {
         .then((data) => setData(data.drinks))
         .catch((error)=> setError(error))
         .finally(()=> setLoading(false));
-    }, []);
+    }, [url]);
 
     return {data, loading, error}  
 }
