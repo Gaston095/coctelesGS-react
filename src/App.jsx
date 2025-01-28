@@ -1,5 +1,6 @@
 import { useState } from "react";
 import useFetch from "./useFetch";
+import Header from "./components/Header";
 
 function App() {
   const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
@@ -11,8 +12,9 @@ function App() {
 
   return (
     <>
+      <Header />
       <h1>Hola Mundo!</h1>
-      
+
       <div>
         {alphabet.map((char) => (
           <button key={char} onClick={() => setLetter(char)}>
