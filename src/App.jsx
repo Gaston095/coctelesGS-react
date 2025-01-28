@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useFetch from "./useFetch";
 import Header from "./components/Header";
+import Homepage from "./components/Homepage";
 
 function App() {
   const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
@@ -13,6 +14,7 @@ function App() {
   return (
     <>
       <Header />
+      <Homepage />
       <h1>Hola Mundo!</h1>
 
       <div>
