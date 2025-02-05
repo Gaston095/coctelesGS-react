@@ -2,6 +2,7 @@ import { useState } from "react";
 import useFetch from "./useFetch";
 import Header from "./components/Header";
 import Homepage from "./components/Homepage";
+import Card from "./components/Card";
 
 function App() {
   const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
@@ -16,6 +17,7 @@ function App() {
       <Header />
       <Homepage />
       <h1>Hola Mundo!</h1>
+      <Card img={"https://www.gastroactitud.com/wp-content/uploads/2022/08/manhattan-apertura.jpg"}/>
 
       <div>
         {alphabet.map((char) => (
