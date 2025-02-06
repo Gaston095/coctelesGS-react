@@ -12,9 +12,9 @@ export default function CardContainer() {
 
   return (
     <>
-      <div>
+      <div className="max-w-[80%] mx-auto my-1.5 bg-slate-800 text-white p-2 rounded-3xl flex justify-around">
         {alphabet.map((char) => (
-          <button key={char} onClick={() => setLetter(char)}>
+          <button key={char} className="cursor-pointer font-bold hover:bg-slate-700 w-full h-full" onClick={() => setLetter(char)}>
             {char}
           </button>
         ))}
