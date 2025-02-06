@@ -12,23 +12,38 @@ export default function CardContainer() {
 
   return (
     <>
-      <div className="max-w-[80%] mx-auto my-1.5 bg-slate-800 text-white p-2 rounded-3xl flex justify-around">
-        {alphabet.map((char) => (
-          <button key={char} className="cursor-pointer font-bold hover:bg-slate-700 w-full h-full" onClick={() => setLetter(char)}>
-            {char}
-          </button>
-        ))}
-      </div>
+      <section className="bg-black py-2">
+        <div className="h-[150px]  flex justify-center items-end">
+          <h1 className="text-white text-2xl font-bold p-4">
+            Listado de cocteles
+          </h1>
+        </div>
+        <div className="max-w-[80%] mx-auto mb-2 bg-slate-800 text-amber-100 p-2 rounded-3xl flex justify-around">
+          {alphabet.map((char) => (
+            <button
+              key={char}
+              className="cursor-pointer font-bold hover:bg-slate-700 w-full h-full"
+              onClick={() => setLetter(char)}
+            >
+              {char}
+            </button>
+          ))}
+        </div>
 
-      <ul className="flex justify-center gap-2 flex-wrap">
-        {error && <li>Error: {error}</li>}
-        {loading && <li>Loading...</li>}
-        {data === null ? (
-          <h1>Vacio</h1>
-        ) : (
-          data?.map((drink) => <li key={drink.idDrink}><Card img={drink.strDrinkThumb} name={drink.strDrink}/></li>)
-        )}
-      </ul>
+        <ul className="flex justify-center gap-2 flex-wrap">
+          {error && <li>Error: {error}</li>}
+          {loading && <li>Loading...</li>}
+          {data === null ? (
+            <h1>Vacio</h1>
+          ) : (
+            data?.map((drink) => (
+              <li key={drink.idDrink}>
+                <Card img={drink.strDrinkThumb} name={drink.strDrink} />
+              </li>
+            ))
+          )}
+        </ul>
+      </section>
     </>
   );
 }
