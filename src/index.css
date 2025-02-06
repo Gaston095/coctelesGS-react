@@ -5,4 +5,10 @@
     --font-playfair: "Playfair", "serif";
     --font-poppins: "Poppins", "serif";
   }
-  
+
+
+  @layer utilities {
+    .clip-polygon {
+      clip-path: polygon(0 15%, 100% 29%, 100% 34%, 0 34%);
+    }
+  }
