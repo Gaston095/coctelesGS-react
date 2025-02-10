@@ -1,14 +1,12 @@
 import Header from "./components/Header";
-import Homepage from "./components/Homepage";
-import Card from "./components/Card";
 import CardContainer from "./components/CardContainer";
+import AppRouter from "./components/Router/AppRouter";
 
 function App() {
-
   return (
     <>
       <Header />
-      <Homepage />
+      <AppRouter />
       <CardContainer />
     </>
   );
