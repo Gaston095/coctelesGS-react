@@ -1,6 +1,7 @@
 import { useState } from "react";
 import useFetch from "../useFetch";
 import Card from "./Card";
+import { Link } from "react-router-dom";
 
 export default function CardContainer() {
   const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
@@ -30,19 +31,19 @@ export default function CardContainer() {
           ))}
         </div>
 
-        <ul className="flex justify-center gap-2 flex-wrap">
+        <section className="flex justify-center gap-2 flex-wrap">
           {error && <li>Error: {error}</li>}
           {loading && <li>Loading...</li>}
           {data === null ? (
             <h1>Vacio</h1>
           ) : (
             data?.map((drink) => (
-              <li key={drink.idDrink}>
+              <Link key={drink.idDrink} to={`/detail/${drink.idDrink}`}>
                 <Card img={drink.strDrinkThumb} name={drink.strDrink} />
-              </li>
+              </Link>
             ))
           )}
-        </ul>
+        </section>
       </section>
     </>
   );
