@@ -32,12 +32,12 @@ export default function CardDetail() {
     <>
       <section className="w-full h-screen bg-black text-white">
         {card && card.length > 0 && (
-          <div className="flex">
+          <div className="flex gap-3 max-w-[90%] mx-auto">
             <img className="w-[40%]" src={card[0].strDrinkThumb} />
             <div>
-              <h1>{card[0].strDrink}</h1>
-              <h3>Ingredients</h3>
-              <ul>
+              <h1 className="text-4xl font-montserrat">{card[0].strDrink}</h1>
+              <h3 className="font-bold font-montserrat">Ingredients</h3>
+              <ul className="font-playfair">
                 {Array.from({ length: 15 }, (_, index) => {
                   const ingredient = card[0][`strIngredient${index + 1}`];
                   const measure = card[0][`strMeasure${index + 1}`];
@@ -58,7 +58,7 @@ export default function CardDetail() {
                   return null;
                 })}
               </ul>
-              <p>{card[0].strInstructions}</p>
+              <p className="font-poppins">{card[0].strInstructions}</p>
               
             </div>
           </div>
