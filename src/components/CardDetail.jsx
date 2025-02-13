@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 export default function CardDetail() {
@@ -30,7 +30,11 @@ export default function CardDetail() {
 
   return (
     <>
-      <section className="w-full h-screen bg-[#131313] text-white flex items-center">
+      <section className="w-full h-screen bg-[#131313] text-white flex items-center flex flex-col gap-6">
+        <div className="w-full bg-black h-10 flex items-center text-2xl font-normal font-poppins p-4">
+          <Link to={"/"}>Volver</Link>
+        </div>
+
         {card && card.length > 0 && (
           <div className="flex gap-6 max-w-[90%] mx-auto">
             <img className="w-[40%]" src={card[0].strDrinkThumb} />
