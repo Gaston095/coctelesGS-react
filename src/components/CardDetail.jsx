@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import Spinner from "./Spinner";
 
 export default function CardDetail() {
   const { id } = useParams();
@@ -32,7 +33,7 @@ export default function CardDetail() {
         <div className="w-full bg-black h-10 flex items-center text-2xl font-normal font-poppins p-4">
           <Link to={"/"}>Volver</Link>
         </div>
-        {(loading) && <p>Loading...</p>}
+        {(loading) && <Spinner />}
         {(error) && <p>Error: {error.message}</p>}
 
         {card && card.length > 0 && (

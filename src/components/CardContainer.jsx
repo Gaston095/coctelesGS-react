@@ -2,6 +2,7 @@ import { useState } from "react";
 import useFetch from "../useFetch";
 import Card from "./Card";
 import { Link } from "react-router-dom";
+import Spinner from "./Spinner";
 
 export default function CardContainer() {
   const alphabet = "abcdefghijklmnopqrstuvwxyz".split("");
@@ -31,18 +32,22 @@ export default function CardContainer() {
           ))}
         </div>
 
-        <section className="flex justify-center gap-2 flex-wrap">
-          {error && <li>Error: {error}</li>}
-          {loading && <li>Loading...</li>}
-          {data === null ? (
-            <h1>Vacio</h1>
-          ) : (
-            data?.map((drink) => (
-              <Link key={drink.idDrink} to={`/detail/${drink.idDrink}`}>
-                <Card img={drink.strDrinkThumb} name={drink.strDrink} />
-              </Link>
-            ))
-          )}
+        <section className="flex flex-col justify-center">
+          <div className="h-10 my-0">
+            {error && <li>Error: {error}</li>}
+            {loading && <Spinner />}
+          </div>
+          <div className="flex flex-wrap gap-2 justify-center">
+            {data === null ? (
+              <h1>Vacio</h1>
+            ) : (
+              data?.map((drink) => (
+                <Link key={drink.idDrink} to={`/detail/${drink.idDrink}`}>
+                  <Card img={drink.strDrinkThumb} name={drink.strDrink} />
+                </Link>
+              ))
+            )}
+          </div>
         </section>
       </section>
     </>
