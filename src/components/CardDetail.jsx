@@ -25,15 +25,15 @@ export default function CardDetail() {
       });
   }, [id]);
 
-  if (loading) return <p>Loading...</p>;
-  if (error) return <p>Error: {error.message}</p>;
 
   return (
     <>
-      <section className="w-full h-screen bg-[#131313] text-white flex items-center flex flex-col gap-6">
+      <section className="w-full h-screen bg-[#131313] text-white flex items-center flex-col gap-6">
         <div className="w-full bg-black h-10 flex items-center text-2xl font-normal font-poppins p-4">
           <Link to={"/"}>Volver</Link>
         </div>
+        {(loading) && <p>Loading...</p>}
+        {(error) && <p>Error: {error.message}</p>}
 
         {card && card.length > 0 && (
           <div className="flex gap-6 max-w-[90%] mx-auto">
