@@ -1,4 +1,4 @@
-import CoctailIcon from "../icons/coctailIcon";
+import CoctailIcon from "../icons/CoctailIcon";
 import SearchBar from "./SearchBar";
 
 
