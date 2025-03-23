@@ -29,7 +29,7 @@ export default function CardDetail() {
 
   return (
     <>
-      <section className="w-full h-screen bg-[#131313] text-white flex items-center flex-col gap-6">
+      <section className="w-full h-screen overflow-y-auto bg-[#131313] text-white flex items-center flex-col gap-6">
         <div className="w-full bg-black h-10 flex items-center text-2xl font-normal font-poppins p-4">
           <Link to={"/"}>Volver</Link>
         </div>
@@ -37,8 +37,8 @@ export default function CardDetail() {
         {(error) && <p>Error: {error.message}</p>}
 
         {card && card.length > 0 && (
-          <div className="flex gap-6 max-w-[90%] mx-auto">
-            <img className="w-[40%]" src={card[0].strDrinkThumb} />
+          <div className="flex gap-6 max-w-[80%] mx-auto max-md:flex-col max-md:m-10">
+            <img className="w-[40%] max-md:mx-auto max-sm:w-[90%]" src={card[0].strDrinkThumb} />
             <div className="flex flex-col gap-4">
               <h1 className="text-6xl font-montserrat">{card[0].strDrink}</h1>
               <div className="flex gap-6">

@@ -15,16 +15,16 @@ export default function CardContainer() {
   return (
     <>
       <section className="bg-black py-2">
-        <div className="h-[150px]  flex justify-center items-end">
+        <div className="h-[150px]  flex justify-center items-end max-sm:items-center">
           <h1 className="text-white text-2xl font-bold p-4">
             Listado de cocteles
           </h1>
         </div>
-        <div className="max-w-[80%] mx-auto mb-2 bg-slate-800 text-amber-100 p-2 rounded-3xl flex justify-around">
+        <div className="max-w-[80%] max-sm:max-w-[90%] max-sm:flex-wrap mx-auto mb-2 bg-slate-800 text-amber-100 p-2 rounded-3xl flex justify-around">
           {alphabet.map((char) => (
             <button
               key={char}
-              className="cursor-pointer font-bold hover:bg-slate-700 w-full h-full"
+              className="cursor-pointer font-bold hover:bg-slate-700 w-full max-sm:w-16 h-full"
               onClick={() => setLetter(char)}
             >
               {char}
@@ -33,7 +33,7 @@ export default function CardContainer() {
         </div>
 
         <section className="flex flex-col justify-center">
-          <div className="h-10 my-0">
+          <div className="h-10 my-0 mx-auto">
             {error && <li>Error: {error}</li>}
             {loading && <Spinner />}
           </div>
